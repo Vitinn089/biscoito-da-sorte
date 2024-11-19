@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color-primary: linear-gradient(-57deg,#190363 0,#bb00ff 100%);
+    --bg-card-color-primary: hsl(0, 0%, 100%);
+    --bg-button-primary: hsl(35, 100%, 50%);
+    --bg-button-hover: hsl(35, 100%, 45%);
+    --bg-luck-primary: hsl(198, 32%, 92%);
+    --color-text-primary: hsl(238, 27%, 28%);
+    --color-text-button-primary: hsl(0, 0%, 100%);
+    --color-text-luck: hsl(0, 0%, 0%);
+    --color-box-shadow-primary: hsla(0, 0%, 0%, 0.8);
+    --color-box-shadow-secondary: hsla(0, 0%, 0%, 0.5);
+}
+
+/* FONT */
+
+h1 {
+    font: 700 2.4rem/2.9rem "Montserrat", sans-serif; 
+    color: var(--color-text-primary);
+}
+
+p,
+ button {
+    font: 400 1.5rem/2rem "DM Sans", sans-serif;
+    color: var(--color-text-primary);
+}
+
+button {
+    font-weight: 700;
+    color: var(--color-text-button-primary);
+}
+
+.text-luck {
+    font: 400 2.4rem/2.9rem "Dancing Script", sans-serif;
+    color: var(--color-text-luck);
+}
+
+/* GENERICS CLASS */
+
+.hidden {
+    display: none;
+}
+
+.container {
+    width: min(42.8rem, 90%);
+    box-shadow: 0 2rem 5rem var(--color-box-shadow-primary);
+    border-radius: .5rem;
+    padding: 4.8rem 6.4rem 6.4rem;
+
+    background-color: var(--bg-card-color-primary);
+    text-align: center;
+}
+
+button {
+    padding: 1.6rem;
+    border: none;
+    border-radius: .4rem;
+
+    background-color: var(--bg-button-primary);
+    transition: color 300ms;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--bg-button-hover);
+}
+
+/* APP */
+
+#app {
+    height: 100vh;
+    background-image: var(--bg-color-primary);
+    background-size: 200% 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: gradient 10s ease infinite;
+}
+
+/* PAGE HOME */
+
+.home p {
+ margin-top: 1.4rem;
+}
+
+.home img {
+    max-width: 30rem;
+    margin-top: 2rem;
+}
+
+.home img:hover {
+    cursor: pointer;
+}
+
+/* PAGE LUCK */
+
+.luck p {
+    max-width: 29.3rem;
+    margin-block: 1.7rem;
+
+    background-color: var(--bg-luck-primary);
+    box-shadow: .2rem .2rem .2rem var(--color-box-shadow-secondary);
+}
+
+.luck img {
+    max-width: 30rem;
+    margin-bottom: 1.7rem;
+    display: block;
+}
+
+.luck button {
+    width: 17.4rem;
+}
+
+/* ANIMATIONS */
+
+.shake {
+    animation: shake 300ms backwards alternate infinite;
+}
+
+.reveal {
+    animation: reveal 1.5s;
+}
+
+@keyframes shake {
+    10% {
+        transform: translate(-3px, -2px) rotateZ(3deg);
+    }
+    30% {
+        transform: translate(2px, -1px) rotateZ(-4deg);
+    }
+    60% {
+        transform: translate(1px, -2px)rotateZ(2deg);
+    }
+    90% {
+        transform: translate(3px, 2px)rotateZ(-3px);
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateY(160px)
+                            scale(0.2)
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
